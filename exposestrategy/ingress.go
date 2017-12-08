@@ -57,7 +57,7 @@ func NewIngressStrategy(client *client.Client, encoder runtime.Encoder, domain s
 func (s *IngressStrategy) Add(svc *api.Service) error {
 	var appName string
 	if svc.Labels["release"] != "" {
-		appName = strings.Replace(svc.Name, svc.Labels["release"] + "-", "", 1)
+		appName = strings.Replace(svc.Name, svc.Labels["release"]+"-", "", 1)
 	} else {
 		appName = svc.Name
 	}
@@ -184,7 +184,7 @@ func (s *IngressStrategy) Add(svc *api.Service) error {
 func (s *IngressStrategy) Remove(svc *api.Service) error {
 	var appName string
 	if svc.Labels["release"] != "" {
-		appName = strings.Replace(svc.Name, svc.Labels["release"] + "-", "", 1)
+		appName = strings.Replace(svc.Name, svc.Labels["release"]+"-", "", 1)
 	} else {
 		appName = svc.Name
 	}
